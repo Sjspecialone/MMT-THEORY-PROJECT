@@ -31,7 +31,7 @@
             </select>
 
             <h3>Upload Photo:</h3>
-            <label style="display: inline-block; width: 50px; height: 50px; border-radius: 5px; cursor: pointer; margin-bottom: 10px; background-color: #007bff; text-align: center; line-height: 50px; color: white;">
+            <label style="display: inline-block; width: 50px; height: 50px; border-radius: 5px; cursor: pointer; margin-bottom: 10px; background-color: #000; text-align: center; line-height: 50px; color: white;">
                 <input type="file" id="imageUpload" accept="image/*" onchange="addImage(this.files)" style="display: none;">
                 📎
             </label>
