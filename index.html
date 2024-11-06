@@ -85,72 +85,50 @@
             display: block;
         }
 
-        /* Image Section Styles */
-        .image-section img {
+        /* Image Slider Styles */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slider img {
             width: 100%;
             height: auto;
-            border-radius: 8px;
         }
 
-        /* Video Section Styles */
-        .video-section video {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        /* About Section Styles */
-        .about-section {
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-
-        /* Feedback Form Styles */
-        .feedback-form {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
-
-        .feedback-form h2 {
-            margin-bottom: 15px;
-            color: #333;
-        }
-
-        .feedback-form label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        .feedback-form input,
-        .feedback-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-        }
-
-        .feedback-form button {
-            background-color: #333;
+        /* Optional Navigation Arrows */
+        .arrow-left, .arrow-right {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
             color: white;
-            padding: 10px 20px;
             border: none;
-            border-radius: 5px;
+            padding: 10px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 24px;
         }
 
-        .feedback-form button:hover {
-            background-color: #575757;
+        .arrow-left {
+            left: 10px;
         }
+
+        .arrow-right {
+            right: 10px;
+        }
+
     </style>
 </head>
 <body>
@@ -172,6 +150,20 @@
 
     <!-- Main Content -->
     <div class="content">
+        <!-- Image Slider Section (Default view) -->
+        <div id="slider" class="section active">
+            <div class="slider-container">
+                <div class="slider">
+                    <img src="aman.jpg" alt="Image 1">
+                    <img src="aman.jpg" alt="Image 2">
+                    <img src="aman.jpg" alt="Image 3">
+                </div>
+                <!-- Optional Arrow Navigation -->
+                <button class="arrow-left" onclick="prevSlide()">❮</button>
+                <button class="arrow-right" onclick="nextSlide()">❯</button>
+            </div>
+        </div>
+
         <!-- About Section -->
         <div id="about" class="section">
             <div class="about-section">
@@ -180,17 +172,28 @@
             </div>
         </div>
 
-        <!-- Image Section -->
-        <div id="image" class="section">
-            <h2>Image Section</h2>
-            <div class="image-section">
-                <img src="https://via.placeholder.com/800x400" alt="Sample Image">
+        <!-- Feedback Section -->
+        <div id="feedback" class="section">
+            <div class="feedback-form">
+                <h2>Leave Your Feedback</h2>
+                <form>
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your email" required>
+
+                    <label for="feedback">Your Feedback:</label>
+                    <textarea id="feedback" name="feedback" rows="5" placeholder="Write your feedback here..." required></textarea>
+
+                    <button type="submit">Submit Feedback</button>
+                </form>
             </div>
         </div>
 
+    </div>
 
-
-    <!-- JavaScript to show selected sections -->
+    <!-- JavaScript to show selected sections and slider functionality -->
     <script>
         function showSection(sectionId) {
             // Hide all sections
@@ -203,6 +206,36 @@
             var selectedSection = document.getElementById(sectionId);
             selectedSection.classList.add('active');
         }
+
+        // Image Slider functionality
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.slider img');
+            const totalSlides = slides.length;
+            if (index >= totalSlides) {
+                currentSlide = 0; // Loop back to the first image
+            } else if (index < 0) {
+                currentSlide = totalSlides - 1; // Go to the last image
+            } else {
+                currentSlide = index;
+            }
+
+            // Move the slider to the current image
+            const slider = document.querySelector('.slider');
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Auto slide every 3 seconds
+        setInterval(nextSlide, 3000); // Change image every 3 seconds
     </script>
 
 </body>
