@@ -7,7 +7,7 @@
 </head>
 <body style="font-family: 'Arial', sans-serif; background: linear-gradient(to bottom right, #e0f7fa, #80deea); margin: 0; padding: 20px; color: #333;">
     <div style="width: 90%; max-width: 800px; margin: 0 auto; background-color: #ffffff; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); padding: 20px;">
-        <h2 style="text-align: center; color: #007bff; margin-bottom: 20px; font-size: 24px;">Event Coordinator Dashboard</h2>
+        <h2 style="text-align: center; color: #2cde38; margin-bottom: 20px; font-size: 24px;">Event Coordinator Dashboard</h2>
 
         <!-- Login Section -->
         <div id="loginContainer" style="display: block; margin-bottom: 20px; padding: 20px; border: 1px solid #007bff; border-radius: 10px; background-color: #e9f5ff;">
