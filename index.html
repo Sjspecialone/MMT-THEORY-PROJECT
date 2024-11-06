@@ -3,9 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Website with Navigation Bar</title>
+
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Left sidebar styles */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #333;
+            color: #fff;
+            padding-top: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            border-bottom: 1px solid #444;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+
+        /* Profile Section */
+        .profile {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .profile p {
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        /* Main content area */
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            flex: 1;
+            background-color: #f9f9f9;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        /* Section styles */
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        /* Image Section Styles */
+        .image-section img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Video Section Styles */
+        .video-section video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* About Section Styles */
+        .about-section {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        /* Feedback Form Styles */
+        .feedback-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .feedback-form h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .feedback-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .feedback-form input,
+        .feedback-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .feedback-form button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .feedback-form button:hover {
+            background-color: #575757;
+        }
+    </style>
 </head>
 <body>
-    
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <div class="profile">
+            <img src="https://via.placeholder.com/50" alt="User Photo">
+            <p>Username</p>
+        </div>
+        <a href="javascript:void(0);" onclick="showSection('about')">About</a>
+        <a href="javascript:void(0);" onclick="showSection('login')">Login</a>
+        <a href="javascript:void(0);" onclick="showSection('image')">Images</a>
+        <a href="javascript:void(0);" onclick="showSection('video')">Videos</a>
+        <a href="javascript:void(0);" onclick="showSection('coordinator')">Coordinator</a>
+        <a href="javascript:void(0);" onclick="showSection('profile')">Your Profile</a>
+        <a href="javascript:void(0);" onclick="showSection('feedback')">Feedback</a> <!-- New feedback link -->
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- About Section -->
+        <div id="about" class="section">
+            <div class="about-section">
+                <h2>About</h2>
+                <p>This section provides information about the website and its purpose.</p>
+            </div>
+        </div>
+
+        <!-- Image Section -->
+        <div id="image" class="section">
+            <h2>Image Section</h2>
+            <div class="image-section">
+                <img src="https://via.placeholder.com/800x400" alt="Sample Image">
+            </div>
+        </div>
+
+
+
+    <!-- JavaScript to show selected sections -->
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            var sections = document.querySelectorAll('.section');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+
+            // Show the selected section
+            var selectedSection = document.getElementById(sectionId);
+            selectedSection.classList.add('active');
+        }
+
+        // Default to show the "About" section on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('about');
+        });
+    </script>
+
 </body>
 </html>
