@@ -100,3 +100,14 @@ h2 {
     font-size: 14px;
     margin-top: 10px;
 }
+/* Adjust the size of the login box */
+.login-box {
+    width: 500px;  /* Increase width even further */
+    padding: 60px;  /* Increase padding for more space inside */
+    margin: 50px auto; /* Center the box */
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+

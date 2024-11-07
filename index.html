@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Website with Navigation Bar</title>
-    <link rel="stylesheet" href="frontpage.css">
-    <script src="frontpage.js"></script>
-   
+    <link rel="stylesheet" href="index.css">
+    <script src="firstpage.js" defer></script> <!-- Using defer to load the JS after HTML -->
 </head>
 <body>
 
@@ -22,7 +21,6 @@
         <a href="javascript:void(0);" onclick="showSection('image')">Images</a>
         <a href="javascript:void(0);" onclick="showSection('video')">Videos</a>
         <a href="javascript:void(0);" onclick="showSection('coordinator')">Coordinator</a>
-        <a href="javascript:void(0);" onclick="showSection('profile')">Your Profile</a>
         <a href="javascript:void(0);" onclick="showSection('feedback')">Feedback</a> <!-- New feedback link -->
     </div>
 
@@ -41,8 +39,7 @@
                 <button class="arrow-right" onclick="nextSlide()">❯</button>
             </div>
         </div>
+    </div>
 
-       
-      
 </body>
 </html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Website with Navigation Bar</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="login.css"> <!-- Link to the login CSS -->
+    <link rel="stylesheet" href="feedback.css"> <!-- Link to the feedback CSS -->
+    <link rel="stylesheet" href="video.css">
+    <script src="firstpage.js" defer></script> <!-- Using defer to load the JS after HTML -->
+    <script src="video.js" defer></script>
+    <script src="feedback.js" defer></script> <!-- Link to the feedback JS -->
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <div class="profile">
+            <img src="https://via.placeholder.com/50" alt="User Photo">
+            <p>Username</p>
+        </div>
+        <a href="javascript:void(0);" onclick="showSection('about')">About</a>
+        <a href="javascript:void(0);" onclick="showSection('login')">Login</a>
+        <a href="javascript:void(0);" onclick="showSection('image')">Images</a>
+        <a href="javascript:void(0);" onclick="showSection('video')">Videos</a>
+        <a href="javascript:void(0);" onclick="showSection('coordinator')">Coordinator</a>
+        <a href="javascript:void(0);" onclick="showSection('feedback')">Feedback</a> <!-- New feedback link -->
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Login Section -->
+        <div id="login" class="section">
+            <div class="login-container">
+                <div class="login-box">
+                    <h2>Login</h2>
+                    <form id="loginForm">
+                        <div class="input-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                        </div>
+                        <button type="submit" class="login-btn">Login</button>
+                        <div class="error-message" id="error-message"></div>
+                    </form>
+                    <p class="signup-link">Don't have an account? <a href="#">Sign Up</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feedback Section (Centered Form) -->
+        <div id="feedback" class="section">
+            <div class="feedback-container">
+                <h1>Campus Canvas Feedback Form</h1>
+                
+                <!-- Feedback Form -->
+                <form id="feedbackForm" onsubmit="return validateForm()">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rating">Rate Us</label>
+                        <select id="rating" name="rating" required>
+                            <option value="">Select Rating</option>
+                            <option value="1">1 - Poor</option>
+                            <option value="2">2 - Fair</option>
+                            <option value="3">3 - Good</option>
+                            <option value="4">4 - Very Good</option>
+                            <option value="5">5 - Excellent</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comments">Your Comments</label>
+                        <textarea id="comments" name="comments" rows="4" placeholder="Enter your feedback"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Feedback</button>
+                </form>
+
+                <div id="thankYouMessage" class="thank-you" style="display:none;">
+                    <h2>Thank You for Your Feedback!</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Section (Merged with the first code) -->
+        <div id="video" class="section">
+            <h2>Event Videos</h2>
+
+            <!-- Filter Section -->
+            <section id="filter-section">
+                <h3>Filter Videos</h3>
+                <label for="event-name">Event Name:</label>
+                <select id="event-name">
+                    <option value="">Select Event</option>
+                    <option value="Parola">Parola</option>
+                    <option value="Zencoder">Zencoder</option>
+                    <option value="Robotics">Robotics</option>
+                    <option value="Game Dev">Game Dev</option>
+                    <option value="AI Robotics">AI Robotics</option>
+                </select>
+                <button id="apply-filters">Apply Filters</button>
+            </section>
+
+            <!-- Video Grid (Scrollable) -->
+            <div id="video-grid" class="video-grid">
+                <!-- Video Items will be dynamically loaded here -->
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="video-thumbnail1.jpg" alt="Video Thumbnail">
+                    </div>
+                    <div class="video-info">
+                        <h3>Video Title 1</h3>
+                        <p>Event: Parola</p>
+                        <p>Duration: 15:32</p>
+                        <p>Description: A brief description of the video content...</p>
+                        <a href="video1.mp4" class="video-link">Watch Video</a>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="video-thumbnail2.jpg" alt="Video Thumbnail">
+                    </div>
+                    <div class="video-info">
+                        <h3>Video Title 2</h3>
+                        <p>Event: Zencoder</p>
+                        <p>Duration: 10:24</p>
+                        <p>Description: A brief description of the video content...</p>
+                        <a href="video2.mp4" class="video-link">Watch Video</a>
+                    </div>
+                </div>
+
+                <!-- More videos can be added here -->
+            </div>
+        </div>
+
+        <!-- Image Slider Section (Default view) -->
+        <div id="slider" class="section active">
+            <div class="slider-container">
+                <div class="slider">
+                    <img src="aman.jpg" alt="Image 1">
+                    <img src="aman.jpg" alt="Image 2">
+                    <img src="aman.jpg" alt="Image 3">
+                </div>
+                <!-- Optional Arrow Navigation -->
+                <button class="arrow-left" onclick="prevSlide()">❮</button>
+                <button class="arrow-right" onclick="nextSlide()">❯</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="login.js"></script> <!-- Link to the login JS -->
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Video Timeline</title>
+    <link rel="stylesheet" href="video.css">
+</head>
+<body>
+
+    <!-- Filter Section -->
+    <section id="filter-section">
+        <h2>Filter Videos</h2>
+        <label for="event-name">Event Name:</label>
+        <select id="event-name">
+            <option value="">Select Event</option>
+            <option value="Parola">Parola</option>
+            <option value="Zencoder">Zencoder</option>
+            <option value="Robotics">Robotics</option>
+            <option value="Game Dev">Game Dev</option>
+            <option value="AI Robotics">AI Robotics</option>
+        </select>
+        
+        <button id="apply-filters">Apply Filters</button>
+    </section>
+
+    <!-- Video Section -->
+    <section id="videos">
+        <h2>Event Videos</h2>
+
+        <!-- Video Grid (Scrollable) -->
+        <div id="video-grid" class="video-grid">
+            <!-- Videos will be dynamically loaded here -->
+        </div>
+    </section>
+
+    <script src="video.js"></script>
+</body>
+</html>
