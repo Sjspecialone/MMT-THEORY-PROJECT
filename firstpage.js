@@ -43,3 +43,14 @@ function showSection(sectionId) {
     var selectedSection = document.getElementById(sectionId);
     selectedSection.classList.add('active');
 }
+function showSection(sectionId) {
+    // Hide all sections
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => section.classList.remove('active'));
+
+    // Show the selected section
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.classList.add('active');
+    }
+}
