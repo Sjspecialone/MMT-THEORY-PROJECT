@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Website with Navigation Bar</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+   
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <div class="profile">
+            <img src="https://via.placeholder.com/50" alt="User Photo">
+            <p>Username</p>
+        </div>
+        <a href="javascript:void(0);" onclick="showSection('about')">About</a>
+        <a href="javascript:void(0);" onclick="showSection('login')">Login</a>
+        <a href="javascript:void(0);" onclick="showSection('image')">Images</a>
+        <a href="javascript:void(0);" onclick="showSection('video')">Videos</a>
+        <a href="javascript:void(0);" onclick="showSection('coordinator')">Coordinator</a>
+        <a href="javascript:void(0);" onclick="showSection('profile')">Your Profile</a>
+        <a href="javascript:void(0);" onclick="showSection('feedback')">Feedback</a> <!-- New feedback link -->
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Image Slider Section (Default view) -->
+        <div id="slider" class="section active">
+            <div class="slider-container">
+                <div class="slider">
+                    <img src="aman.jpg" alt="Image 1">
+                    <img src="aman.jpg" alt="Image 2">
+                    <img src="aman.jpg" alt="Image 3">
+                </div>
+                <!-- Optional Arrow Navigation -->
+                <button class="arrow-left" onclick="prevSlide()">❮</button>
+                <button class="arrow-right" onclick="nextSlide()">❯</button>
+            </div>
+        </div>
+
+       
+      
+</body>
+</html>
