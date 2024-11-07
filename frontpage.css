@@ -1,0 +1,123 @@
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+}
+
+/* Left sidebar styles */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    color: #fff;
+    padding-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    border-bottom: 1px solid #444;
+    transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #575757;
+}
+
+/* Profile Section */
+.profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Main content area */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    flex: 1;
+    background-color: #f9f9f9;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/* Section styles */
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+/* Image Slider Styles */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+}
+
+/* Optional Navigation Arrows */
+.arrow-left, .arrow-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.arrow-left {
+    left: 10px;
+}
+
+.arrow-right {
+    right: 10px;
+}
+
