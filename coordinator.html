@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Event Coordinator Dashboard</title>
 </head>
 <body>
 
@@ -211,23 +211,27 @@
             </div>
         </div>
     </div>
-    
+
     <script>
         let uploadedImages = [];
         let uploadedVideos = [];
-    
+
+        // Show coordinator page after login
         function login() {
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
-    
+
             if (username && password) {
+                // Hide login and show coordinator section
                 document.getElementById('loginContainer').style.display = 'none';
-                document.getElementById('selectionContainer').style.display = 'block';
+                document.getElementById('coordinator').style.display = 'block';  // Show the coordinator section
+                document.getElementById('selectionContainer').style.display = 'block';  // Show event selection section
             } else {
                 alert("Please enter both username and password.");
             }
         }
-    
+
+        // Image upload handling
         function addImage(files) {
             const file = files[0];
             if (file) {
@@ -235,7 +239,8 @@
                 displayUploadedImages();
             }
         }
-    
+
+        // Display uploaded images
         function displayUploadedImages() {
             const container = document.getElementById('uploadedImagesContainer');
             container.innerHTML = '';
@@ -245,22 +250,24 @@
                 img.src = src;
                 img.style.cssText = 'max-width: 100px; height: auto; border-radius: 8px; margin-top: 10px; margin-right: 10px;';
                 imgContainer.appendChild(img);
-    
+
                 const removeButton = document.createElement('button');
                 removeButton.textContent = "Remove";
                 removeButton.style.cssText = 'background-color: red; margin-top: 5px; width: 100px; display: block; cursor: pointer; color: white; border: none; border-radius: 5px;';
                 removeButton.onclick = () => removeImage(index);
                 imgContainer.appendChild(removeButton);
-    
+
                 container.appendChild(imgContainer);
             });
         }
-    
+
+        // Remove image from uploaded list
         function removeImage(index) {
             uploadedImages.splice(index, 1);
             displayUploadedImages();
         }
-    
+
+        // Video upload handling
         function addVideo(files) {
             const file = files[0];
             if (file) {
@@ -268,7 +275,8 @@
                 displayUploadedVideos();
             }
         }
-    
+
+        // Display uploaded videos
         function displayUploadedVideos() {
             const container = document.getElementById('uploadedVideosContainer');
             container.innerHTML = '';
@@ -279,29 +287,31 @@
                 video.controls = true;
                 video.style.cssText = 'width: 100%; margin-top: 10px;';
                 videoContainer.appendChild(video);
-    
+
                 const removeButton = document.createElement('button');
                 removeButton.textContent = "Remove";
                 removeButton.style.cssText = 'background-color: red; margin-top: 5px; width: 100px; display: block; cursor: pointer; color: white; border: none; border-radius: 5px;';
                 removeButton.onclick = () => removeVideo(index);
                 videoContainer.appendChild(removeButton);
-    
+
                 container.appendChild(videoContainer);
             });
         }
-    
+
+        // Remove video from uploaded list
         function removeVideo(index) {
             uploadedVideos.splice(index, 1);
             displayUploadedVideos();
         }
-    
+
+        // Confirm event selection
         function confirmSelection() {
             const eventName = document.getElementById('eventSelect').value;
             if (!eventName) {
                 alert("Please select an event.");
                 return;
             }
-    
+
             const eventDetails = document.getElementById('eventDetails');
             eventDetails.innerHTML = `<h3>Event Name: ${eventName}</h3>`;
             uploadedImages.forEach(src => {
@@ -313,17 +323,20 @@
             document.getElementById('selectionContainer').style.display = 'none';
             document.getElementById('confirmationContainer').style.display = 'block';
         }
-    
+
+        // Finalize and submit the selections
         function finalizeSubmission() {
             alert("Your selections have been submitted!");
             resetForm();
         }
-    
+
+        // Go back to event selection
         function goBack() {
             document.getElementById('selectionContainer').style.display = 'block';
             document.getElementById('confirmationContainer').style.display = 'none';
         }
-    
+
+        // Reset the entire form
         function resetForm() {
             uploadedImages = [];
             uploadedVideos = [];
@@ -334,6 +347,5 @@
             document.getElementById('confirmationContainer').style.display = 'none';
         }
     </script>
-    
 </body>
 </html>
