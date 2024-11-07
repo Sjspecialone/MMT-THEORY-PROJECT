@@ -3,15 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Website with Navigation Bar</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="login.css"> <!-- Link to the login CSS -->
-    <link rel="stylesheet" href="feedback.css"> <!-- Link to the feedback CSS -->
-    <link rel="stylesheet" href="video.css">
-    <script src="firstpage.js" defer></script> <!-- Using defer to load the JS after HTML -->
-    <script src="video.js" defer></script>
-    <script src="feedback.js" defer></script> <!-- Link to the feedback JS -->
+    <title>Document</title>
 </head>
 <body>
 
@@ -174,19 +166,19 @@
                     <button onclick="login()" style="padding: 10px 15px; border: none; border-radius: 5px; background-color: #007bff; color: white; font-size: 16px; cursor: pointer; margin-top: 10px;">Log In</button>
                 </div>
 
-        <!-- Event Selection Section -->
-        <div id="selectionContainer" style="display: none; margin-bottom: 20px; padding: 20px; border: 1px solid #007bff; border-radius: 10px; background-color: #e9f5ff;">
-            <h3>Select Event:</h3>
-            <select id="eventSelect" style="width: calc(100% - 22px); padding: 10px; margin-bottom: 10px; border: 1px solid #007bff; border-radius: 5px; font-size: 16px;">
-                <option value="">-- Select an Event --</option>
-                <option value="Annual Tech Fest">Annual Tech Fest</option>
-                <option value="Cultural Night">Cultural </option>
-                <option value="Science Exhibition">Science Exhibition</option>
-                <option value="Charity Gala">Charity Gala</option>
-                <option value="Music Festival">Music Festival</option>
-                <option value="Art Exhibition">Art Exhibition</option>
-                <option value="Food Festival">Food Festival</option>
-            </select>
+                <!-- Event Selection Section -->
+                <div id="selectionContainer" style="display: none; margin-bottom: 20px; padding: 20px; border: 1px solid #007bff; border-radius: 10px; background-color: #e9f5ff;">
+                    <h3>Select Event:</h3>
+                    <select id="eventSelect" style="width: calc(100% - 22px); padding: 10px; margin-bottom: 10px; border: 1px solid #007bff; border-radius: 5px; font-size: 16px;">
+                        <option value="">-- Select an Event --</option>
+                        <option value="Annual Tech Fest">Annual Tech Fest</option>
+                        <option value="Cultural Night">Cultural </option>
+                        <option value="Science Exhibition">Science Exhibition</option>
+                        <option value="Charity Gala">Charity Gala</option>
+                        <option value="Music Festival">Music Festival</option>
+                        <option value="Art Exhibition">Art Exhibition</option>
+                        <option value="Food Festival">Food Festival</option>
+                    </select>
 
                     <h3>Upload Photo:</h3>
                     <label style="display: inline-block; width: 50px; height: 50px; border-radius: 5px; cursor: pointer; margin-bottom: 10px; background-color: #000; text-align: center; line-height: 50px; color: white;">
@@ -219,16 +211,15 @@
             </div>
         </div>
     </div>
-
-    <script src="login.js"></script> <!-- Link to the login JS -->
+    
     <script>
         let uploadedImages = [];
         let uploadedVideos = [];
-
+    
         function login() {
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
-
+    
             if (username && password) {
                 document.getElementById('loginContainer').style.display = 'none';
                 document.getElementById('selectionContainer').style.display = 'block';
@@ -236,7 +227,7 @@
                 alert("Please enter both username and password.");
             }
         }
-
+    
         function addImage(files) {
             const file = files[0];
             if (file) {
@@ -244,7 +235,7 @@
                 displayUploadedImages();
             }
         }
-
+    
         function displayUploadedImages() {
             const container = document.getElementById('uploadedImagesContainer');
             container.innerHTML = '';
@@ -254,22 +245,22 @@
                 img.src = src;
                 img.style.cssText = 'max-width: 100px; height: auto; border-radius: 8px; margin-top: 10px; margin-right: 10px;';
                 imgContainer.appendChild(img);
-
+    
                 const removeButton = document.createElement('button');
                 removeButton.textContent = "Remove";
                 removeButton.style.cssText = 'background-color: red; margin-top: 5px; width: 100px; display: block; cursor: pointer; color: white; border: none; border-radius: 5px;';
                 removeButton.onclick = () => removeImage(index);
                 imgContainer.appendChild(removeButton);
-
+    
                 container.appendChild(imgContainer);
             });
         }
-
+    
         function removeImage(index) {
             uploadedImages.splice(index, 1);
             displayUploadedImages();
         }
-
+    
         function addVideo(files) {
             const file = files[0];
             if (file) {
@@ -277,7 +268,7 @@
                 displayUploadedVideos();
             }
         }
-
+    
         function displayUploadedVideos() {
             const container = document.getElementById('uploadedVideosContainer');
             container.innerHTML = '';
@@ -288,24 +279,29 @@
                 video.controls = true;
                 video.style.cssText = 'width: 100%; margin-top: 10px;';
                 videoContainer.appendChild(video);
-
+    
                 const removeButton = document.createElement('button');
                 removeButton.textContent = "Remove";
                 removeButton.style.cssText = 'background-color: red; margin-top: 5px; width: 100px; display: block; cursor: pointer; color: white; border: none; border-radius: 5px;';
                 removeButton.onclick = () => removeVideo(index);
                 videoContainer.appendChild(removeButton);
-
+    
                 container.appendChild(videoContainer);
             });
         }
-
+    
         function removeVideo(index) {
             uploadedVideos.splice(index, 1);
             displayUploadedVideos();
         }
-
+    
         function confirmSelection() {
             const eventName = document.getElementById('eventSelect').value;
+            if (!eventName) {
+                alert("Please select an event.");
+                return;
+            }
+    
             const eventDetails = document.getElementById('eventDetails');
             eventDetails.innerHTML = `<h3>Event Name: ${eventName}</h3>`;
             uploadedImages.forEach(src => {
@@ -317,17 +313,17 @@
             document.getElementById('selectionContainer').style.display = 'none';
             document.getElementById('confirmationContainer').style.display = 'block';
         }
-
+    
         function finalizeSubmission() {
             alert("Your selections have been submitted!");
             resetForm();
         }
-
+    
         function goBack() {
             document.getElementById('selectionContainer').style.display = 'block';
             document.getElementById('confirmationContainer').style.display = 'none';
         }
-
+    
         function resetForm() {
             uploadedImages = [];
             uploadedVideos = [];
@@ -338,5 +334,6 @@
             document.getElementById('confirmationContainer').style.display = 'none';
         }
     </script>
+    
 </body>
 </html>
