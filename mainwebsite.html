@@ -6,32 +6,113 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Website with Navigation Bar</title>
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="login.css"> <!-- Link to the login CSS -->
-    <link rel="stylesheet" href="feedback.css"> <!-- Link to the feedback CSS -->
+    <link rel="stylesheet" href="login.css"> 
+    <link rel="stylesheet" href="feedback.css"> 
     <link rel="stylesheet" href="video.css">
-    <script src="firstpage.js" defer></script> <!-- Using defer to load the JS after HTML -->
+    <link rel="stylesheet" href="images.css">
+    <link rel="stylesheet" href="about.css">
+    <script src="images.js"></script>
+    <script src="firstpage.js" defer></script>
     <script src="video.js" defer></script>
-    <script src="feedback.js" defer></script> <!-- Link to the feedback JS -->
+    <script src="feedback.js" defer></script>
 </head>
 <body>
-
-    <!-- Sidebar Navigation -->
     <div class="sidebar">
         <div class="profile">
             <img src="https://via.placeholder.com/50" alt="User Photo">
-            <p>Username</p>
+            <p>CAMPUS CANVAS</p>
         </div>
         <a href="javascript:void(0);" onclick="showSection('about')">About</a>
         <a href="javascript:void(0);" onclick="showSection('login')">Login</a>
         <a href="javascript:void(0);" onclick="showSection('image')">Images</a>
         <a href="javascript:void(0);" onclick="showSection('video')">Videos</a>
         <a href="javascript:void(0);" onclick="showSection('coordinator')">Coordinator</a>
-        <a href="javascript:void(0);" onclick="showSection('feedback')">Feedback</a> <!-- New feedback link -->
+        <a href="javascript:void(0);" onclick="showSection('feedback')">Feedback</a> 
     </div>
-
-    <!-- Main Content -->
     <div class="content">
-        <!-- Login Section -->
+        <div id="about" class="section">
+            <div class="about-section">
+                <h1>Welcome to Campus Canvas</h1>
+                <p class="intro-text">Explore and relive the vibrant events and cherished moments of our campus.</p>
+            </div>
+
+            <div class="content-section">
+                <div class="info-card">
+                    <h2>What is Campus Canvas?</h2>
+                    <p>Campus Canvas is a dynamic digital space dedicated to showcasing multimedia elements from various campus events. From cultural festivals to academic seminars, discover all the highlights, memories, and details right here.</p>
+                </div>
+
+                <div class="info-card">
+                    <h2>Features</h2>
+                    <ul>
+                        <li>Photo galleries of events with high-quality images</li>
+                        <li>Video highlights capturing memorable moments</li>
+                        <li>Event details including dates, times, and venues</li>
+                        <li>Easy navigation to explore events of your choice</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h2>Our Mission</h2>
+                    <p>We aim to provide a platform that connects everyone to the spirit of our campus. Whether you're reliving memories or discovering new ones, Campus Canvas brings the campus experience closer to you.</p>
+                </div>
+            </div>
+        </div>
+        <div id="image" class="section">
+            <div class="gallery-container">
+                <h2>Image Gallery</h2>
+                <div class="gallery">
+                    <div class="image-item">
+                        <img src="https://www.jiit.ac.in/sites/default/files/DSC00538.jpg" alt="Music Fest Image" class="gallery-image">
+                        <button class="download-btn" onclick="downloadImage('https://www.jiit.ac.in/sites/default/files/DSC00538.jpg')">Download</button>
+                    </div>
+                    <div class="image-item">
+                        <img src="https://www.jiit.ac.in/sites/default/files/Jaypee%20Entrepreneurs%20Meet%2027th%20Aug%202022%20pic2.jpg" alt="Entrepreneurs Meet Image" class="gallery-image">
+                        <button class="download-btn" onclick="downloadImage('https://www.jiit.ac.in/sites/default/files/Jaypee%20Entrepreneurs%20Meet%2027th%20Aug%202022%20pic2.jpg')">Download</button>
+                    </div>
+                    <div class="image-item">
+                        <img src="https://www.jiit.ac.in/sites/default/files/gallery-20.jpg" alt="Dance Fest Image 1" class="gallery-image">
+                        <button class="download-btn" onclick="downloadImage('https://www.jiit.ac.in/sites/default/files/gallery-20.jpg')">Download</button>
+                    </div>
+                    <div class="image-item">
+                        <img src="https://www.jiit.ac.in/sites/default/files/sports-hub-write-1.jpg" alt="Sports Meet Image 1" class="gallery-image">
+                        <button class="download-btn" onclick="downloadImage('https://www.jiit.ac.in/sites/default/files/sports-hub-write-1.jpg')">Download</button>
+                    </div>
+                    <div class="image-item">
+                        <img src="https://www.jiit.ac.in/sites/default/files/DSC_0028.jpg" alt="Alumini Meet Image 1" class="gallery-image">
+                        <button class="download-btn" onclick="downloadImage('https://www.jiit.ac.in/sites/default/files/DSC_0028.jpg')">Download</button>
+                    </div>
+                    <div class="image-item">
+                        <img src="https://www.jiit.ac.in/sites/default/files/KNUTH-9.jpg" alt="Tech Fest Image 1" class="gallery-image">
+                        <button class="download-btn" onclick="downloadImage('https://www.jiit.ac.in/sites/default/files/KNUTH-9.jpg')">Download</button>
+                    </div>
+                    <div class="image-item">
+                        <img src="https://www.jiit.ac.in/sites/default/files/KNUTH-26.jpg" alt="Tech Fest Image 2" class="gallery-image">
+                        <button class="download-btn" onclick="downloadImage('https://www.jiit.ac.in/sites/default/files/KNUTH-26.jpg')">Download</button>
+                    </div>
+                    <div class="image-item">
+                        <img src="https://www.jiit.ac.in/sites/default/files/sports-hub-write_1.jpg" alt="Sports Meet Image 2" class="gallery-image">
+                        <button class="download-btn" onclick="downloadImage('https://www.jiit.ac.in/sites/default/files/sports-hub-write_1.jpg')">Download</button>
+                    </div>
+                    <div class="image-item">
+                        <img src="https://www.jiit.ac.in/sites/default/files/DSC00590.jpg" alt="Alumuni Meet Image 2" class="gallery-image">
+                        <button class="download-btn" onclick="downloadImage('https://www.jiit.ac.in/sites/default/files/DSC00590.jpg')">Download</button>
+                    </div>
+                    <div class="image-item">
+                        <img src="https://www.jiit.ac.in/sites/default/files/gallery-21.jpg" alt="Dance Fest Image 2" class="gallery-image">
+                        <button class="download-btn" onclick="downloadImage('https://www.jiit.ac.in/sites/default/files/gallery-21.jpg')">Download</button>
+                    </div>
+                    <div class="image-item">
+                        <img src="https://www.jiit.ac.in/sites/default/files/gallery-18.jpg" alt="Dance Fest Image 3" class="gallery-image">
+                        <button class="download-btn" onclick="downloadImage('https://www.jiit.ac.in/sites/default/files/gallery-18.jpg')">Download</button>
+                    </div>
+                    <div class="image-item">
+                        <img src="https://www.jiit.ac.in/sites/default/files/gallery-3_0.jpg" alt="Parola Image" class="gallery-image">
+                        <button class="download-btn" onclick="downloadImage('https://www.jiit.ac.in/sites/default/files/gallery-3_0.jpg')">Download</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id="login" class="section">
             <div class="login-container">
                 <div class="login-box">
@@ -52,24 +133,18 @@
                 </div>
             </div>
         </div>
-
-        <!-- Feedback Section (Centered Form) -->
         <div id="feedback" class="section">
             <div class="feedback-container">
                 <h1>Campus Canvas Feedback Form</h1>
-                
-                <!-- Feedback Form -->
                 <form id="feedbackForm" onsubmit="return validateForm()">
                     <div class="form-group">
                         <label for="name">Your Name</label>
                         <input type="text" id="name" name="name" placeholder="Enter your name" required>
                     </div>
-
                     <div class="form-group">
                         <label for="email">Your Email</label>
                         <input type="email" id="email" name="email" placeholder="Enter your email" required>
                     </div>
-
                     <div class="form-group">
                         <label for="rating">Rate Us</label>
                         <select id="rating" name="rating" required>
@@ -81,26 +156,19 @@
                             <option value="5">5 - Excellent</option>
                         </select>
                     </div>
-
                     <div class="form-group">
                         <label for="comments">Your Comments</label>
                         <textarea id="comments" name="comments" rows="4" placeholder="Enter your feedback"></textarea>
                     </div>
-
                     <button type="submit" class="submit-btn">Submit Feedback</button>
                 </form>
-
                 <div id="thankYouMessage" class="thank-you" style="display:none;">
                     <h2>Thank You for Your Feedback!</h2>
                 </div>
             </div>
         </div>
-
-        <!-- Video Section (Merged with the first code) -->
         <div id="video" class="section">
             <h2>Event Videos</h2>
-
-            <!-- Filter Section -->
             <section id="filter-section">
                 <h3>Filter Videos</h3>
                 <label for="event-name">Event Name:</label>
@@ -114,10 +182,7 @@
                 </select>
                 <button id="apply-filters">Apply Filters</button>
             </section>
-
-            <!-- Video Grid (Scrollable) -->
             <div id="video-grid" class="video-grid">
-                <!-- Video Items will be dynamically loaded here -->
                 <div class="video-item">
                     <div class="video-thumbnail">
                         <img src="video-thumbnail1.jpg" alt="Video Thumbnail">
@@ -130,7 +195,6 @@
                         <a href="video1.mp4" class="video-link">Watch Video</a>
                     </div>
                 </div>
-
                 <div class="video-item">
                     <div class="video-thumbnail">
                         <img src="video-thumbnail2.jpg" alt="Video Thumbnail">
@@ -143,26 +207,9 @@
                         <a href="video2.mp4" class="video-link">Watch Video</a>
                     </div>
                 </div>
-
-                <!-- More videos can be added here -->
-            </div>
-        </div>
-
-        <!-- Image Slider Section (Default view) -->
-        <div id="slider" class="section active">
-            <div class="slider-container">
-                <div class="slider">
-                    <img src="aman.jpg" alt="Image 1">
-                    <img src="aman.jpg" alt="Image 2">
-                    <img src="aman.jpg" alt="Image 3">
-                </div>
-                <!-- Optional Arrow Navigation -->
-                <button class="arrow-left" onclick="prevSlide()">❮</button>
-                <button class="arrow-right" onclick="nextSlide()">❯</button>
             </div>
         </div>
     </div>
-
-    <script src="login.js"></script> <!-- Link to the login JS -->
+    <script src="login.js"></script>
 </body>
 </html>
