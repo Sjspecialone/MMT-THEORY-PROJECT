@@ -7,7 +7,7 @@
 body {
     font-family: Arial, sans-serif;
     color: #333;
-    background-color: #f4f4f9;
+    background: linear-gradient(135deg, #d0f0c0 25%, #ffecd2 50%, #ffe8a7 75%);
 }
 
 .about-section {
