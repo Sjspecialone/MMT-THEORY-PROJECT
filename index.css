@@ -10,6 +10,15 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     height: 100vh;
+    background: linear-gradient(135deg, #fbc2eb 25%, #a6c1ee 50%, #ff9a9e 75%);
+    background-size: 200% 200%;
+    animation: gradientAnimation 5s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Left sidebar styles */
