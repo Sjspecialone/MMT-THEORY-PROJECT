@@ -6,11 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Website with Navigation Bar</title>
     <link rel="stylesheet" href="index.css">
-    <script src="firstpage.js" defer></script> <!-- Using defer to load the JS after HTML -->
+    <script src="firstpage.js" defer></script> 
 </head>
 <body>
-
-    <!-- Sidebar Navigation -->
+    <!-- Sidebar -->
     <div class="sidebar">
         <div class="profile">
             <img src="" alt="User Photo">
@@ -26,20 +25,40 @@
 
     <!-- Main Content -->
     <div class="content">
-        <!-- Image Slider Section (Default view) -->
+        <!-- Image Slider -->
         <div id="slider" class="section active">
             <div class="slider-container">
                 <div class="slider">
-                    <img src="aman.jpg" alt="Image 1">
-                    <img src="aman.jpg" alt="Image 2">
-                    <img src="aman.jpg" alt="Image 3">
+                    <img src="https://www.jiit.ac.in/sites/default/files/gallery-2_2.jpg" alt="Image 1">
+                    <img src="https://www.jiit.ac.in/sites/default/files/gallery-22.jpg" alt="Image 2">
+                    <img src="https://www.jiit.ac.in/sites/default/files/Chords%20and%20Clues.jpg" alt="Image 3">
                 </div>
-                <!-- Optional Arrow Navigation -->
                 <button class="arrow-left" onclick="prevSlide()">❮</button>
                 <button class="arrow-right" onclick="nextSlide()">❯</button>
             </div>
         </div>
-    </div>
 
+        <!-- Upcoming Events Section -->
+        <div class="upcoming-events">
+            <h2>Upcoming Events</h2>
+            <div class="events">
+                <div class="event">
+                    <h3>Event 1: Prompt Crafting</h3>
+                    <p><strong>Date:</strong> November 18, 2024</p>
+                    <p>Join us for an unforgettable journey packed with innovation and excitement.</p>
+                </div>
+                <div class="event">
+                    <h3>Event 2: AI Unplugged</h3>
+                    <p><strong>Date:</strong> November 19, 2024</p>
+                    <p>Let your creativity shine as you craft powerful prompts and challenge your AI expertise!</p>
+                </div>
+                <div class="event">
+                    <h3>Event 3: Tech Talk </h3>
+                    <p><strong>Date:</strong> November 20, 2024</p>
+                    <p>Join the fun and games while exploring AI like never before. No tech? No problem!</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

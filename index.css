@@ -121,3 +121,131 @@ body {
     right: 10px;
 }
 
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 200px;
+    background-color: #333;
+    color: white;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: white;
+    margin: 10px 0;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.sidebar a:hover {
+    background-color: #444;
+}
+
+.profile img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+/* Main Content Styling */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+/* Slider Styling */
+.slider-container {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+}
+
+button.arrow-left, button.arrow-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+button.arrow-left {
+    left: 10px;
+}
+
+button.arrow-right {
+    right: 10px;
+}
+
+button.arrow-left:hover, button.arrow-right:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Upcoming Events Styling */
+.upcoming-events {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.upcoming-events h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.events {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.event {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.event h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.event p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.event p strong {
+    font-weight: bold;
+}
