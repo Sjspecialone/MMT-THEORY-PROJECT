@@ -1,38 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Sample video data with titles and Google Drive video links for 8 videos
+    // Sample video data with titles and YouTube video links
     const videos = [
         {
-            title: 'Parola - Opening Ceremony',
-            videoSrc: 'https://drive.google.com/uc?export=view&id=your_file_id_1'
+            title: 'AI AND ML',
+            videoSrc: 'https://www.youtube.com/embed/RXDduY2Vr0Q'
         },
         {
-            title: 'Zencoder - Workshop',
-            videoSrc: 'https://drive.google.com/uc?export=view&id=your_file_id_2'
+            title: 'Youth Club',
+            videoSrc: 'https://www.youtube.com/embed/lbIEWI5Ums8'
         },
         {
-            title: 'Robotics - Closing Ceremony',
-            videoSrc: 'https://drive.google.com/uc?export=view&id=your_file_id_3'
+            title: 'Robotics ',
+            videoSrc: 'https://www.instagram.com/reel/C6dmF71JXlc/embed'
         },
         {
-            title: 'Zencoder - Workshop 2',
-            videoSrc: 'https://drive.google.com/uc?export=view&id=your_file_id_4'
+            title: 'Youth Club',
+            videoSrc: 'https://www.youtube.com/embed/mKc4F5DrrTU'
         },
         {
-            title: 'Game Dev - Introduction',
-            videoSrc: 'https://drive.google.com/uc?export=view&id=your_file_id_5'
+            title: 'Optica',
+            videoSrc: 'https://www.youtube.com/embed/gGmYlFXr4sQ'
         },
-        {
-            title: 'AI Robotics - Presentation',
-            videoSrc: 'https://drive.google.com/uc?export=view&id=your_file_id_6'
-        },
-        {
-            title: 'Robotics - Workshop Highlights',
-            videoSrc: 'https://drive.google.com/uc?export=view&id=your_file_id_7'
-        },
-        {
-            title: 'Zencoder - Final Demo',
-            videoSrc: 'https://drive.google.com/uc?export=view&id=your_file_id_8'
-        }
+        
+       
+       
     ];
 
     const videoGrid = document.getElementById('video-grid');
@@ -53,13 +44,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const videoItem = document.createElement('div');
             videoItem.classList.add('video-item');
 
-            // Add title and video player
+            // Add title and YouTube iframe
             videoItem.innerHTML = `
                 <h3>${video.title}</h3>
-                <video controls>
-                    <source src="${video.videoSrc}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="${video.videoSrc}" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
             `;
 
             // Add the video item to the grid
